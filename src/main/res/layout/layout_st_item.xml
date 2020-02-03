@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="82dp"
+    >
+<de.hdodenhof.circleimageview.CircleImageView
+    android:id="@+id/iv_st_layout_item_prf_pic"
+    android:layout_width="64dp"
+    android:layout_height="64dp"
+    android:src="@drawable/test_avatar"
+    android:layout_marginRight="@dimen/standard_margin"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    />
+    <TextView
+        android:id="@+id/tv_st_layout_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:text="علی میکاییلی"
+        android:layout_toLeftOf="@id/iv_st_layout_item_prf_pic"
+        android:gravity="center_vertical"
+        android:layout_margin="@dimen/standard_margin"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginRight="@dimen/standard_margin"
+        />
+</RelativeLayout>

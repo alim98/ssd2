@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.AboutUs">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@drawable/toolbar_dropshadow"
+            app:layout_constraintTop_toBottomOf="@id/toolbar2" />
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/about_us_menu"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+            app:layout_constraintTop_toTopOf="@+id/toolbar2" />
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="12dp"
+
+            android:src="@drawable/ic_more_vert_white_24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_margin"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+            tools:layout_editor_absoluteX="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.alim.ssn.utils.YekanTextView
+                    android:id="@+id/tv_our_team"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:text="@string/out_team"
+                    android:textColor="#212121"
+                    android:textSize="21sp" />
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="3dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/soft_corner_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_about_us_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+
+                        >
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/reza"
+                            app:civ_border_color="#BDBDBD"
+                            app:civ_border_width="2dp" />
+
+                        <com.alim.ssn.utils.YekanTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:text="رضا هلالی"
+                            android:textColor="#212121" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="UI Designer"
+                            android:textColor="#757575" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ali"
+                            app:civ_border_color="#BDBDBD"
+                            app:civ_border_width="2dp" />
+
+                        <com.alim.ssn.utils.YekanTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:text="علی میکائیلی"
+                            android:textColor="#212121" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Mobile Dev"
+                            android:textColor="#757575" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/mehdi"
+                            app:civ_border_color="#BDBDBD"
+                            app:civ_border_width="2dp" />
+
+                        <com.alim.ssn.utils.YekanTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:text="مهدی خیرخواه"
+                            android:textColor="#212121" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Web Developer"
+                            android:textColor="#757575" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="32dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+
+                        >
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/hossein"
+                            app:civ_border_color="#BDBDBD"
+                            app:civ_border_width="2dp" />
+
+                        <com.alim.ssn.utils.YekanTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:text="حسین حضرتی"
+                            android:textColor="#212121" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Business Analyst"
+                            android:textColor="#757575" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/mojtaba"
+                            app:civ_border_color="#BDBDBD"
+                            app:civ_border_width="2dp" />
+
+                        <com.alim.ssn.utils.YekanTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:text=" سید مجتبی کریم پور"
+                            android:textColor="#212121" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Backend Dev"
+                            android:textColor="#757575" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_margin"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="12dp"
+
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.alim.ssn.utils.YekanTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:gravity="center_horizontal"
+                    android:text="درباره توت"
+                    android:textColor="#212121"
+                    android:textSize="21sp" />
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="3dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/soft_corner_line" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center|right"
+                    android:padding="@dimen/standard_margin"
+
+                    android:text="تیم توت از زمان تاسیس همیشه سعی داشته که بهترین ها را برای مخاطبان خود فراهم آورد. ما در توت تمام توان خود را به کار میگیریم تا بهترین کیفیت را به طور رایگان به شما کاربران عزیر ارائه دهیم به همین دلیل اعضای تیم با تلاش و پشتکار شبانه روی در حال تلاش برای ساخت بهترین محصول هستند. هدف توت فقط در زمینه نرم افزاری نیست بلکه ما درآنیم که بتوانیم ایرانی بهتر برای آیندگانمان بسازیم و این هدف انگیزه بخش تک تک اعضای تیم توت است. \n
+اپلیکیشن جزوا با هدف آسان تر کردن انتقال بار علمی در دانشگاه های ایران طراحی شده است و روز به روز در حال گسترش است. درصورت هرگونه انتقاد، پیشنهاد و یا نظری میتوانید از طریق پل های ارتباطی که در داخل اپلیکیشن آمده است با ما در تماس باشید.
+ما همیشه علاقه مند به شنیدن از شما هستیم."
+                    android:textColor="#757575" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_margin"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="12dp"
+
+            app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.alim.ssn.utils.YekanTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:gravity="center_horizontal"
+                    android:text="آدرس"
+                    android:textColor="#212121"
+                    android:textSize="21sp" />
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="3dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/soft_corner_line" />
+
+                <com.alim.ssn.utils.YekanTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|right"
+                    android:padding="@dimen/standard_margin"
+                    android:text="اردبیل
+
+میدان سعدی، دانشگاه فرهنگیان اردبیل \n
+
+ساعت کاری \n
+شنبه تا چهارشنبه: ۹ صبح تا ۵ بعد از ظهر \n
+پنجشنبه و جمعه: ۱۱ صبح تا ۳ بعد از ظهر"
+                    android:textColor="#757575" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

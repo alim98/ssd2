@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".auth.LoginActivity"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@color/colorPrimary" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="152dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginLeft="32dp"
+
+            app:cardCornerRadius="8dp"
+            android:elevation="4dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                >
+                <com.alim.ssn.utils.YekanTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login"
+                    android:textSize="32sp"
+                    android:textColor="#2e7d32"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    />
+            <LinearLayout
+                android:layout_width="256dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layoutDirection="ltr">
+                <EditText
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:layout_marginLeft="@dimen/half_standard_margin"
+                    android:text="09"/>
+                <EditText
+                    android:id="@+id/et_user_name_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/username"
+                    android:maxLines="1"
+                    android:maxLength="255"
+                    android:paddingLeft="@dimen/standard_margin"
+                    android:paddingRight="@dimen/standard_margin" />
+            </LinearLayout>
+                <EditText
+                    android:id="@+id/et_password_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="right"
+                    android:hint="@string/password"
+                    android:maxLines="1"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:inputType="textPassword"
+                    android:paddingLeft="@dimen/standard_margin"
+                    android:paddingRight="@dimen/standard_margin" />
+
+                <Button
+                    android:id="@+id/btn_login"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/circle_btn"
+                    android:text="@string/login"
+                    android:textColor="@android:color/white"
+                    android:textSize="22sp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    >
+                    <com.alim.ssn.utils.YekanTextView
+                        android:id="@+id/tv_login_register"
+                        android:layout_width="wrap_content"
+                        android:layout_toLeftOf="@id/tv_not_registered"
+                        android:layout_height="wrap_content"
+                        android:text="@string/register"
+                        android:paddingLeft="@dimen/half_standard_margin"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/x2_standard_font_size"
+                        android:textStyle="bold"
+                        android:layout_marginRight="@dimen/half_standard_margin"
+                        />
+                    <com.alim.ssn.utils.YekanTextView
+                        android:id="@+id/tv_not_registered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="عضو نیستید؟"
+
+                        android:textSize="@dimen/x2_standard_font_size"
+                        android:layout_centerHorizontal="true"
+                        />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

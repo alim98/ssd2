@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search_post"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/tv_no_post_exists"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="هیچ پستی یافت نشد"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textSize="@dimen/x6_standard_font_size"
+        />
+</RelativeLayout>

@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">JOZVA</string>
+    <string name="lorem_ipsum">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</string>
+    <string name="title_activity_login">Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="test_jozveh_title">جزوه درس سیستم عامل استاد حسنی</string>
+    <string name="add_comment">افزدون نظر</string>
+    <string name="phone_number">شماره تلفن</string>
+    <string name="username">نام کاربری</string>
+    <string name="password">رمز عبور</string>
+    <string name="login">ورود</string>
+    <string name="register">ثبت نام</string>
+    <string name="name">نام کامل</string>
+    <string name="out_team">تیم ما</string>
+    <string name="followers">طرفداران</string>
+    <string name="posts">پست ها</string>
+    <string name="follow">دنبال کردن</string>
+    <string name="unfollow">لغو دنبال کردن</string>
+    <string name="liked_your_post">پست شما را پسندید</string>
+    <string name="commented_your_post">نظری برای پست شما نوشت</string>
+    <string name="following_you">شما را دنبال میکند</string>
+    <string name="following">دنبال میکنید</string>
+    <string name="tags">تگ ها</string>
+    <string name="home">خانه</string>
+    <string name="search">جستجو</string>
+    <string name="create">ایجاد</string>
+    <string name="recent">رویداد ها</string>
+    <string name="profile">پروفایل</string>
+    <string name="all">همه</string>
+    <string name="people">افراد</string>
+    <string name="are_you_registered">ثبت نام کرده اید؟</string>
+    <string name="saved_posts">پست های ذخیره شده</string>
+    <string name="logout">خروج</string>
+    <string name="title">عنوان</string>
+    <string name="description">توضیحات</string>
+    <string name="upload">بارگزاری</string>
+    <string name="post">پست</string>
+</resources>

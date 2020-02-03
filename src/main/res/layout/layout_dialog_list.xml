@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.alim.ssn.utils.YekanTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:text="عکس"
+    android:textSize="@dimen/x8_standard_font_size"
+    android:layout_margin="@dimen/x2_standard_margin"
+    android:gravity="right"
+    android:layout_gravity="right"
+    android:padding="@dimen/standard_margin"
+    >
+
+</com.alim.ssn.utils.YekanTextView>

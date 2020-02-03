@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="164dp"
+        android:layout_height="164dp"
+        android:layout_above="@id/verification_text"
+        android:layout_centerHorizontal="true"
+
+        android:src="@drawable/smartphone" />
+
+    <TextView
+        android:id="@+id/verification_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/x2_standard_margin"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="@dimen/x2_standard_margin"
+        android:gravity="center"
+        android:text="پیامی حاوی یک کد چهار رقمی برای شماره تلفن شما ارسال شد، لطفا پس از دریافت پیام کد را در فیلد زیر وارد نمایید."
+        android:textColor="@color/textDefaultColor"
+        android:textSize="@dimen/x2_standard_font_size" />
+
+    <LinearLayout
+        android:id="@+id/ll_verify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/verification_text"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginRight="48dp"
+        android:weightSum="4">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_margin="@dimen/standard_margin"
+            android:maxLength="1"
+            android:layout_weight="1" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_margin="@dimen/standard_margin"
+android:maxLength="1"
+            android:gravity="center"
+            android:layout_weight="1" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_margin="@dimen/standard_margin"
+            android:maxLength="1"
+            android:gravity="center"
+            android:layout_weight="1" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:maxLength="1"
+            android:gravity="center"
+            android:layout_margin="@dimen/standard_margin"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_verify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_verify"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginRight="64dp"
+        android:background="@drawable/circle_btn"
+        android:text="فعالسازی"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/x4_standard_font_size"/>
+</RelativeLayout>

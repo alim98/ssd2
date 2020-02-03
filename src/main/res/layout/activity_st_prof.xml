@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="248dp">
+
+        <ImageView
+            android:id="@+id/iv_prf_header"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/header"
+            tools:scaleType="centerCrop"
+
+            />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_st_prf_activity_img"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            app:civ_border_color="@android:color/white"
+            app:civ_border_width="3dp"
+            tools:src="@drawable/ali"
+
+            />
+    </RelativeLayout>
+
+    <com.alim.ssn.utils.YekanTextView
+        android:id="@+id/tv_st_prf_activity_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/x8_standard_font_size"
+        tools:text="علی میکائیلی" />
+
+    <com.alim.ssn.utils.YekanTextView
+        android:id="@+id/tv_st_prf_activity_uni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/half_standard_margin"
+        android:textColor="@color/textDefaultColor"
+        android:textSize="@dimen/x4_standard_font_size"
+        tools:text="دانشگاه علامه طباطبایی اردبیل" />
+
+    <com.alim.ssn.utils.YekanTextView
+        android:id="@+id/tv_st_prf_activity_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/half_standard_margin"
+        android:layout_marginBottom="@dimen/x2_standard_font_size"
+        android:textColor="#304ffe"
+        android:textSize="@dimen/x4_standard_font_size"
+        tools:text="علوم تربیتی" />
+    <Button
+        android:id="@+id/btn_st_prf_follow"
+        android:layout_width="146dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        android:background="@drawable/circle_btn"
+        android:text="@string/follow"
+        android:textColor="@android:color/white"
+        android:layout_margin="@dimen/half_standard_margin"
+        android:textSize="14sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.4dp"
+        android:background="#ddd" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x2_standard_margin"
+            android:layout_marginTop="@dimen/half_standard_margin"
+            android:layout_marginRight="@dimen/x2_standard_margin"
+            android:layout_marginBottom="@dimen/half_standard_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_st_posts_count_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/half_standard_margin"
+                android:gravity="center"
+                android:textSize="@dimen/x4_standard_font_size"
+                android:textStyle="bold"
+                tools:text="230" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/posts"
+                android:textSize="@dimen/x4_standard_font_size" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x2_standard_margin"
+            android:layout_marginTop="@dimen/half_standard_margin"
+            android:layout_marginRight="@dimen/x2_standard_margin"
+            android:layout_marginBottom="@dimen/half_standard_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_st_followings_count_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/half_standard_margin"
+                android:gravity="center"
+                android:textSize="@dimen/x4_standard_font_size"
+                android:textStyle="bold"
+                tools:text="112 K" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/following"
+                android:textSize="@dimen/x4_standard_font_size" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x2_standard_margin"
+            android:layout_marginTop="@dimen/half_standard_margin"
+            android:layout_marginRight="@dimen/x2_standard_margin"
+            android:layout_marginBottom="@dimen/half_standard_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_st_followers_count_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/half_standard_margin"
+                android:gravity="center"
+                android:textSize="@dimen/x4_standard_font_size"
+                android:textStyle="bold"
+                tools:text="112 K" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/followers"
+                android:textSize="@dimen/x4_standard_font_size" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.4dp"
+        android:background="#ddd" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_st_prf_posts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/btn_about_us"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/colorAccent"
+        android:text="about us"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_following_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/standard_margin"
+        android:text="following"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</LinearLayout>

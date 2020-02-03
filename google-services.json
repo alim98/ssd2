@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "981876568551",
+    "firebase_url": "https://students-8186d.firebaseio.com",
+    "project_id": "students-8186d",
+    "storage_bucket": "students-8186d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981876568551:android:6f716a9c6bd15522",
+        "android_client_info": {
+          "package_name": "com.alim.ssn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "981876568551-49ri7efme58q0tuehr7ss16m5rd0m004.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtXQVsv9W9tg0A23-aUBhn8T_T4KJq-RI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "981876568551-49ri7efme58q0tuehr7ss16m5rd0m004.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

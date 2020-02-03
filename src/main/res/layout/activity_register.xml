@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_constraintTop_toTopOf="parent"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@color/colorPrimary" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="152dp"
+            android:layout_marginRight="32dp"
+
+            android:elevation="4dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                >
+
+           <ImageView
+               android:layout_width="150dp"
+               android:layout_height="80dp"
+               android:layout_gravity="center"
+               android:scaleType="centerCrop"
+               android:adjustViewBounds="true"
+               android:src="@drawable/jozva"/>
+                <LinearLayout
+                    android:layout_width="256dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:layoutDirection="ltr">
+                    <EditText
+                        android:layout_width="32dp"
+                        android:layout_height="wrap_content"
+                        android:editable="false"
+                        android:layout_marginLeft="@dimen/half_standard_margin"
+                        android:text="09"/>
+
+                    <EditText
+                        android:id="@+id/et_phone_number_register"
+                        android:layout_width="224dp"
+                        android:layout_height="wrap_content"
+                        android:hint="123456789"
+                        android:paddingRight="@dimen/standard_margin" />
+
+                    <!-- <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_alignLeft="@id/et_phone_number_register"
+                         android:layout_gravity="center_vertical"
+                         android:layout_marginLeft="16dp"
+                         android:gravity="center"
+                         android:text="09"
+                         android:layout_marginTop="@dimen/half_standard_margin"
+                         android:textSize="@dimen/x4_standard_font_size" />-->
+                </LinearLayout>
+
+                <com.alim.ssn.utils.YekanTextView
+                    android:layout_width="256dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:layout_marginLeft="@dimen/standard_margin"
+                    android:gravity="right"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/small_font_size"
+                    android:textColor="@color/textLightColor"
+                    tools:text="شماره همراه خود را با فرمت بالا وارد کنید."/>
+                <EditText
+                    android:id="@+id/et_name_register"
+                    android:layout_width="256dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:hint="@string/name"
+                    android:layout_gravity="center"
+                    android:paddingLeft="@dimen/standard_margin"
+                    android:paddingRight="@dimen/standard_margin" />
+
+                <EditText
+                    android:id="@+id/et_user_name_register"
+                    android:layout_width="256dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:hint="@string/username"
+                    android:paddingLeft="@dimen/standard_margin"
+                    android:layout_gravity="center"
+                    android:paddingRight="@dimen/standard_margin" />
+                    <com.alim.ssn.utils.YekanTextView
+                        android:layout_width="256dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/standard_margin"
+                        android:layout_marginLeft="@dimen/standard_margin"
+                        android:gravity="right"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:textSize="@dimen/small_font_size"
+                        android:textColor="@android:color/holo_green_dark"
+                        tools:text="این شناسه آزاد است"/>
+                <EditText
+                    android:id="@+id/et_password_register"
+                    android:layout_width="256dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:layout_gravity="center"
+                    android:gravity="right"
+                    android:paddingLeft="@dimen/standard_margin"
+                    android:paddingRight="@dimen/standard_margin" />
+
+                <com.alim.ssn.utils.YekanTextView
+                    android:layout_width="256dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:layout_marginLeft="@dimen/standard_margin"
+                    android:gravity="right"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/small_font_size"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:visibility="gone"
+                    tools:text="رمز عبور باید حداقل از ۶ کاراکتر تشکیل شود."/>
+                <Button
+                    android:id="@+id/btn_register"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/circle_btn"
+                    android:text="@string/register"
+                    android:textColor="@android:color/white"
+                    android:textSize="22sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center">
+
+                    <com.alim.ssn.utils.YekanTextView
+                        android:id="@+id/tv_register_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/half_standard_margin"
+                        android:layout_toLeftOf="@id/tv_not_registered"
+                        android:paddingLeft="@dimen/half_standard_margin"
+                        android:text="@string/login"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/x2_standard_font_size"
+                        android:textStyle="bold" />
+
+                    <com.alim.ssn.utils.YekanTextView
+                        android:id="@+id/tv_not_registered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+
+                        android:text="@string/are_you_registered"
+                        android:textSize="@dimen/x2_standard_font_size" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+

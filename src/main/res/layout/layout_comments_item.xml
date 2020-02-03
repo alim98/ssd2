@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    >
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_comments_prof_icon"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/half_standard_margin"
+        android:layout_marginTop="@dimen/half_standard_margin"
+        android:layout_marginRight="@dimen/standard_margin"
+        android:layout_marginBottom="@dimen/half_standard_margin"
+        android:src="@drawable/test_avatar" />
+
+    <TextView
+        android:id="@+id/tv_comments_st_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/iv_comments_prof_icon"
+        android:layout_marginTop="@dimen/standard_margin"
+        tools:text="علی میکائیلی"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/half_standard_margin"
+        />
+    <com.alim.ssn.utils.YekanTextView
+        android:id="@+id/tv_comments_item_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/tv_comments_st_name"
+        android:layout_marginTop="@dimen/standard_margin"
+        tools:text="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:ellipsize="end"
+        android:layoutDirection="rtl"
+        android:lines="4"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ddd"
+        android:layout_marginTop="4dp"
+        android:layout_below="@id/tv_comments_item_content"/>
+</RelativeLayout>

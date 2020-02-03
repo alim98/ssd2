@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_margin="@dimen/standard_margin">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_create_post_st_prf"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/standard_margin"
+            android:src="@drawable/test_avatar" />
+
+        <com.alim.ssn.utils.YekanTextView
+            android:id="@+id/tv_create_post_st_name"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_create_post_st_prf"
+            android:layout_marginTop="@dimen/half_standard_margin"
+            android:layout_toLeftOf="@id/iv_create_post_st_prf"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/x2_standard_font_size"
+            tools:text="علی میکائیلی" />
+
+        <com.alim.ssn.utils.YekanTextView
+            android:id="@+id/tv_create_post_st_uni"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_create_post_st_name"
+            android:layout_marginTop="@dimen/half_standard_margin"
+            android:layout_toLeftOf="@id/iv_create_post_st_prf"
+            android:textColor="@color/colorAccent"
+            tools:text="دانشگاه علامه طباطبایی"
+
+            />
+
+        <Button
+            android:id="@+id/btn_create_post_post"
+            android:layout_width="84dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:text="@string/post"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/x2_standard_font_size"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/et_create_post_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tags_input"
+        android:layout_below="@id/rl1"
+        android:layout_marginBottom="568dp"
+        android:background="@color/white_transparency"
+        android:gravity="right|top"
+        android:hint="چیزی بنویسید..."
+        android:padding="@dimen/standard_margin" />
+    <com.pchmn.materialchips.ChipsInput
+        android:id="@+id/tags_input"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="right"
+        android:textDirection="rtl"
+        android:layout_above="@id/rl2"
+        app:chip_hasAvatarIcon="false"
+        app:hint="@string/tags"
+        android:layout_margin="@dimen/standard_margin"/>
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true">
+
+
+
+            <ImageView
+                android:id="@+id/iv_create_post_image_pick"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="@dimen/standard_margin"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:src="@drawable/ic_camera_alt_black_24dp" />
+
+            <ImageView
+                android:id="@+id/iv_create_post_file_pick"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="@dimen/standard_margin"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:layout_toRightOf="@id/iv_create_post_image_pick"
+                android:src="@drawable/ic_file_gray_24dp" />
+
+            <ImageView
+                android:id="@+id/iv_create_post_more_action"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:src="@drawable/ic_more_vert_gray_24dp" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

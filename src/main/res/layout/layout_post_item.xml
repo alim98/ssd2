@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_post_author_profile_pic"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/small_intrinsic_padding"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/test_avatar"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_post_author_name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginRight="@dimen/intrinsic_padding"
+            android:layout_toLeftOf="@id/iv_post_author_profile_pic"
+            android:gravity="center|right"
+            android:maxLines="1"
+            tools:text="علی میکاییلی" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_post_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:src="@drawable/test_post"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:maxHeight="350dp" />
+
+    <TextView
+        android:id="@+id/tv_post_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="@string/lorem_ipsum"
+        android:padding="@dimen/intrinsic_padding"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:id="@+id/tv_post_likes_count"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/intrinsic_padding"
+            tools:text="215"
+            />
+        <ImageView
+            android:id="@+id/iv_post_like_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_toLeftOf="@id/tv_post_likes_count"
+            android:layout_marginRight="@dimen/intrinsic_padding"
+            android:src="@drawable/test_like"/>
+
+        <ImageView
+            android:id="@+id/iv_post_save_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/large_intrinsic_padding"
+            android:src="@drawable/test_ic_bookmark_border_black_24dp"/>
+    </RelativeLayout>
+
+</LinearLayout>

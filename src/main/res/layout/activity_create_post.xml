@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+>
+    <EditText
+        android:id="@+id/et_create_post_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+
+        android:layout_margin="@dimen/x2_standard_margin"
+
+        android:hint="@string/title"/>
+    <EditText
+        android:id="@+id/et_create_post_content"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+
+        android:layout_margin="@dimen/x2_standard_margin"
+
+        android:hint="@string/description"/>
+  <!--  <EditText
+        android:id="@+id/et_create_post_grade"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="@dimen/large_intrinsic_padding"
+
+        android:hint="grade"/>
+    <EditText
+        android:id="@+id/et_create_post_field"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="@dimen/large_intrinsic_padding"
+
+        android:hint="field"/>-->
+
+
+    <Button
+        android:id="@+id/btn_create_post_upload_image"
+        android:layout_width="96dp"
+        android:layout_height="32dp"
+        android:text="@string/upload"
+        android:visibility="visible"
+        android:layout_gravity="right"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="@dimen/x2_standard_font_size"
+        android:background="@color/colorAccent"
+        android:layout_margin="@dimen/intrinsic_padding"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/large_intrinsic_padding"
+        >
+        <ProgressBar
+            android:id="@+id/pb_create_post"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            />
+        <Button
+            android:id="@+id/save_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:textColor="@color/colorPrimaryDark"
+            android:elevation="10dp"
+            android:text="save"/>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:id="@+id/sv_main"
+    android:maxLines="1"
+    android:background="@android:color/white"
+android:drawableLeft="@drawable/ic_search_black_24dp"
+    android:drawablePadding="@dimen/standard_margin"
+android:lines="1"
+    android:singleLine="true"
+    android:paddingRight="@dimen/standard_margin"
+    android:paddingLeft="@dimen/standard_margin"
+    />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_search"
+        android:layout_below="@id/sv_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_search"
+        android:layout_below="@id/tl_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</RelativeLayout>

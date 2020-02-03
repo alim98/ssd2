@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/half_standard_margin">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_recent_item_st_profile_pic"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_alignParentRight="true"
+        app:civ_border_color="#e8eaf6"
+        app:civ_border_width="1dp" />
+
+    <com.alim.ssn.utils.YekanTextView
+        android:id="@+id/tv_recent_item_st_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/half_standard_margin"
+        android:layout_toLeftOf="@id/iv_recent_item_st_profile_pic"
+        android:text="حسین حضرتی"
+        android:textColor="@color/textDefaultColor" />
+
+    <com.alim.ssn.utils.YekanTextView
+        android:id="@+id/tv_recent_item_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:layout_marginRight="@dimen/half_standard_margin"
+        android:layout_toLeftOf="@id/tv_recent_item_st_profile_name"
+        android:layout_toRightOf="@id/iv_recent_item_action"
+        android:text="@string/following_you"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_recent_item_action"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/standard_margin"
+        tools:src="@drawable/ic_people_outline_black_24dp" />
+
+    <com.alim.ssn.utils.YekanTextView
+        android:id="@+id/tv_recent_item_time_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/half_standard_margin"
+        android:textSize="@dimen/small_font_size"
+        android:textColor="@android:color/darker_gray"
+        android:layout_toRightOf="@id/iv_recent_item_action"
+        tools:text="سه ساعت قبل" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/iv_recent_item_st_profile_pic"
+        android:layout_marginTop="@dimen/half_standard_margin"
+        android:background="#ddd" />
+</RelativeLayout>
