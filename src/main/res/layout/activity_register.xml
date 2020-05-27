@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_constraintTop_toTopOf="parent"
-
     xmlns:android="http://schemas.android.com/apk/res/android">
 
         <FrameLayout
@@ -54,6 +53,9 @@
                         android:layout_width="224dp"
                         android:layout_height="wrap_content"
                         android:hint="123456789"
+                        android:maxLines="1"
+                        android:maxLength="9"
+                        android:inputType="number"
                         android:paddingRight="@dimen/standard_margin" />
 
                     <!-- <TextView
@@ -69,6 +71,8 @@
                 </LinearLayout>
 
                 <com.alim.ssn.utils.YekanTextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_register_empty_phone_error"
                     android:layout_width="256dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/standard_margin"
@@ -76,28 +80,54 @@
                     android:gravity="right"
                     android:layout_gravity="center"
                     android:textSize="@dimen/small_font_size"
-                    android:textColor="@color/textLightColor"
-                    tools:text="شماره همراه خود را با فرمت بالا وارد کنید."/>
+                    android:textColor="@android:color/holo_red_dark"
+                    android:text="شماره تلفن خود را وارد کنید."/>
                 <EditText
                     android:id="@+id/et_name_register"
                     android:layout_width="256dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="44dp"
+                    android:layout_marginTop="16dp"
                     android:hint="@string/name"
+                    android:maxLines="1"
                     android:layout_gravity="center"
                     android:paddingLeft="@dimen/standard_margin"
                     android:paddingRight="@dimen/standard_margin" />
-
+                <com.alim.ssn.utils.YekanTextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_register_empty_name_error"
+                    android:layout_width="256dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:layout_marginLeft="@dimen/standard_margin"
+                    android:gravity="right"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/small_font_size"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:text="نام خود را وارد کنید."/>
                 <EditText
                     android:id="@+id/et_user_name_register"
                     android:layout_width="256dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="44dp"
+                    android:layout_marginTop="16dp"
                     android:hint="@string/username"
                     android:paddingLeft="@dimen/standard_margin"
+                    android:maxLines="1"
                     android:layout_gravity="center"
                     android:paddingRight="@dimen/standard_margin" />
+                <com.alim.ssn.utils.YekanTextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_register_empty_user_name_error"
+                    android:layout_width="256dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:layout_marginLeft="@dimen/standard_margin"
+                    android:gravity="right"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/small_font_size"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:text="نام کاربری خود را وارد کنید."/>
                     <com.alim.ssn.utils.YekanTextView
+                        android:id="@+id/tv_register_free_user_name_text"
                         android:layout_width="256dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/standard_margin"
@@ -112,15 +142,29 @@
                     android:id="@+id/et_password_register"
                     android:layout_width="256dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="44dp"
+                    android:layout_marginTop="16dp"
                     android:hint="@string/password"
                     android:inputType="textPassword"
                     android:layout_gravity="center"
+                    android:maxLines="1"
                     android:gravity="right"
                     android:paddingLeft="@dimen/standard_margin"
                     android:paddingRight="@dimen/standard_margin" />
 
                 <com.alim.ssn.utils.YekanTextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_register_empty_pass_error"
+                    android:layout_width="256dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:layout_marginLeft="@dimen/standard_margin"
+                    android:gravity="right"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/small_font_size"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:text="رمز عبور خود را وارد کنید."/>
+                <com.alim.ssn.utils.YekanTextView
+                    android:id="@+id/tv_register_short_pass_error"
                     android:layout_width="256dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/standard_margin"
@@ -130,7 +174,7 @@
                     android:textSize="@dimen/small_font_size"
                     android:textColor="@android:color/holo_red_dark"
                     android:visibility="gone"
-                    tools:text="رمز عبور باید حداقل از ۶ کاراکتر تشکیل شود."/>
+                    android:text="رمز عبور باید حداقل از ۶ کاراکتر تشکیل شود."/>
                 <Button
                     android:id="@+id/btn_register"
                     android:layout_width="250dp"
@@ -154,7 +198,7 @@
                         android:id="@+id/tv_register_login"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/half_standard_margin"
+                        android:layout_marginRight="8dp"
                         android:layout_toLeftOf="@id/tv_not_registered"
                         android:paddingLeft="@dimen/half_standard_margin"
                         android:text="@string/login"

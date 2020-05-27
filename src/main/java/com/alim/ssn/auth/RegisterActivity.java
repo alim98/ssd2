@@ -3,10 +3,15 @@ package com.alim.ssn.auth;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alim.ssn.R;
@@ -26,15 +31,48 @@ public class RegisterActivity extends AppCompatActivity {
     EditText username;
     @BindView(R.id.et_password_register)
     EditText password;
+    @BindView(R.id.tv_register_login)
+    TextView login;
+    //error texts
+    @BindView(R.id.tv_register_empty_phone_error)
+    TextView emptyPhoneError;
+    @BindView(R.id.tv_register_empty_name_error)
+    TextView emptyNameError;
+    @BindView(R.id.tv_register_empty_user_name_error)
+    TextView emptyUserNameError;
+    @BindView(R.id.tv_register_empty_pass_error)
+    TextView emptyPassError;
+    @BindView(R.id.tv_register_short_pass_error)
+    TextView shortPassError;
+    @BindView(R.id.tv_register_free_user_name_text)
+    TextView freeUsername;
     private Integer phonev;
     private String namev;
     private String usernamev;
     private String passwordv;
+    private boolean doubleBackToExitPressedOnce=false;
 
+    @Override
+    public void onBackPressed() {
+
+        if (doubleBackToExitPressedOnce)
+            super.onBackPressed();
+
+        doubleBackToExitPressedOnce=true;
+        Toast.makeText(RegisterActivity.this, "برای خارج شدن از برنامه دوباره کلیک کنید", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        setstatusBarColor();
         ButterKnife.bind(this);
 
 
@@ -42,6 +80,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_register)
     void registerPressed(){
+    clearErrors();
         if (checkValidate()) {
             getValues();
             setContentView(R.layout.layout_phone_verification);
@@ -55,7 +94,31 @@ public class RegisterActivity extends AppCompatActivity {
 
         }
     }
+//todo check is username free
+private void setstatusBarColor() {
+    if (Build.VERSION.SDK_INT >= 21) {
+        Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+    }
+}
 
+    private void clearErrors() {
+        shortPassError.setVisibility(View.INVISIBLE);
+        emptyPassError.setVisibility(View.INVISIBLE);
+        emptyUserNameError.setVisibility(View.INVISIBLE);
+        emptyNameError.setVisibility(View.INVISIBLE);
+        emptyPhoneError.setVisibility(View.INVISIBLE);
+
+    }
+
+    @OnClick(R.id.tv_register_login)
+    void goToLoginPage(){
+        this.finish();
+        startActivity(new Intent(this, LoginActivity.class));
+
+    }
     private void getValues() {
          phonev=Integer.valueOf(phoneNumber.getText().toString());
          namev=name.getText().toString();
@@ -64,6 +127,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void register() {
+
         AuthController authController=new AuthController();
 
         authController.register(phonev, namev, usernamev, passwordv, new AuthController.OnRegisterComplete() {
@@ -83,7 +147,23 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private boolean checkValidate() {
-        return phoneNumber != null && name != null && username != null && password != null && password.getText().length() >= 6;
+        if (phoneNumber.getText().toString().isEmpty()){
+            emptyPhoneError.setVisibility(View.VISIBLE);
+        }
+        if (name.getText().toString().isEmpty()){
+            emptyNameError.setVisibility(View.VISIBLE);
+        }
+        if (username.getText().toString().isEmpty())
+        {
+            emptyUserNameError.setVisibility(View.VISIBLE);
+        }
+        if (password.getText().toString().isEmpty()) {
+            emptyPassError.setVisibility(View.VISIBLE);
+        }else if (password.getText().length()<6)
+        {
+            shortPassError.setVisibility(View.VISIBLE);
+        }
+        return !phoneNumber.getText().toString().isEmpty() && !name.getText().toString().isEmpty() && !username.getText().toString().isEmpty() && !password.getText().toString().isEmpty() && password.getText().length() >= 6;
 
     }
 }

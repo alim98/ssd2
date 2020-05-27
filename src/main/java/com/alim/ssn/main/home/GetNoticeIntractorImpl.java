@@ -3,8 +3,7 @@ package com.alim.ssn.main.home;
 import android.content.Context;
 import android.util.Log;
 
-import com.alim.ssn.FakeDataGenerator.FakePosts;
-import com.alim.ssn.main.Posts;
+
 import com.alim.ssn.model.Post;
 import com.alim.ssn.newWebService.ApiClient;
 import com.alim.ssn.newWebService.ApiInterface;
@@ -63,34 +62,5 @@ public class GetNoticeIntractorImpl implements MainContract.GetNoticeIntractor {
         });
     }
 
-    private void createFakePostsWithRxJava(OnFinishedListener onFinishedListener) {
-        FakePosts fakePosts=new FakePosts();
-        Observable<Post> observable=fakePosts.getPosts();
-        List<Post> posts=new ArrayList<>();
-        Observer<Post> observer=new Observer<Post>() {
-            @Override
-            public void onSubscribe(Disposable d) {
 
-            }
-
-            @Override
-            public void onNext(Post post) {
-                posts.add(post);
-                Log.i(TAG, "onNext: add post has done");
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                Log.e(TAG, "onError: error in add post" );
-                onFinishedListener.onFailure(e);
-            }
-
-            @Override
-            public void onComplete() {
-            }
-
-        };
-        observable.subscribe(observer);
-        onFinishedListener.onFinish(posts);
-    }
 }

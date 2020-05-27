@@ -36,6 +36,16 @@
                 android:orientation="vertical"
 
                 >
+                <TextView
+                    android:visibility="invisible"
+                    android:id="@+id/tv_internet_connection_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="خطلا در اتصال به اینترنت"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/half_standard_margin"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="@dimen/x2_standard_font_size"/>
                 <com.alim.ssn.utils.YekanTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -46,7 +56,9 @@
                     android:layout_marginTop="@dimen/standard_margin"
                     />
             <LinearLayout
-                android:layout_width="256dp"
+                android:layout_width="match_parent"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:layout_marginLeft="@dimen/standard_margin"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:orientation="horizontal"
@@ -63,10 +75,37 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/username"
                     android:maxLines="1"
-                    android:maxLength="255"
+                    android:maxLength="9"
                     android:paddingLeft="@dimen/standard_margin"
-                    android:paddingRight="@dimen/standard_margin" />
+                    android:paddingRight="@dimen/standard_margin"
+                    android:inputType="number"/>
             </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_enter_uname_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/half_standard_margin"
+                    android:layout_marginLeft="@dimen/standard_margin"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:textDirection="rtl"
+                    android:text="لطفا شماره تلفن خود را وارد کنید"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:layout_gravity="right"
+                    android:visibility="gone"
+                    />
+                <TextView
+                    android:id="@+id/tv_student_doesnot_exist_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/half_standard_margin"
+                    android:layout_marginLeft="@dimen/standard_margin"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:textDirection="rtl"
+                    android:text="شما تا به حال ثبت نام نکرده اید!"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:layout_gravity="right"
+                    android:visibility="gone"
+                    />
                 <EditText
                     android:id="@+id/et_password_login"
                     android:layout_width="match_parent"
@@ -75,21 +114,65 @@
                     android:gravity="right"
                     android:hint="@string/password"
                     android:maxLines="1"
+                    android:maxLength="16"
                     android:layout_margin="@dimen/standard_margin"
                     android:inputType="textPassword"
                     android:paddingLeft="@dimen/standard_margin"
                     android:paddingRight="@dimen/standard_margin" />
-
-                <Button
-                    android:id="@+id/btn_login"
+                <TextView
+                    android:id="@+id/tv_enter_pass_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/standard_margin"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:textDirection="rtl"
+                    android:text="لطفا رمز خود را وارد کنید"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:layout_gravity="right"
+                    android:visibility="gone"
+                    />
+                <TextView
+                    android:id="@+id/tv_wrong_pass_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/standard_margin"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:textDirection="rtl"
+                    android:text="رمز عبور اشتباه است!"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:layout_gravity="right"
+                    android:visibility="gone"
+                    />
+                <RelativeLayout
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="28dp"
-                    android:background="@drawable/circle_btn"
-                    android:text="@string/login"
-                    android:textColor="@android:color/white"
-                    android:textSize="22sp" />
+                    android:layout_marginTop="28dp">
+
+                    <Button
+                        android:id="@+id/btn_login"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle_btn"
+                        android:text="@string/login"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp" />
+
+                        <ProgressBar
+                            android:id="@+id/login_progress_bar"
+                            android:visibility="invisible"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_centerInParent="true"
+                            android:padding="@dimen/half_standard_margin"
+                            android:indeterminate="true"
+                            android:indeterminateTintMode="src_atop"
+                            android:indeterminateTint="@color/colorAccent"
+                            />
+                </RelativeLayout>
+
+
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="32dp"

@@ -36,9 +36,11 @@
         <activity android:name=".PdfCreator"/>
         <activity android:name=".views.AboutUs" />
         <activity android:name=".main.Comment.CommentsFragment"/>
-        <activity android:name=".auth.RegisterActivity" />
+        <activity android:name=".auth.RegisterActivity"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
         <activity
             android:name=".auth.LoginActivity"
+            android:windowSoftInputMode="adjustPan|adjustResize"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

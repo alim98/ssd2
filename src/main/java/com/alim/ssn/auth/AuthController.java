@@ -57,9 +57,14 @@ public class AuthController {
                 if (response.isSuccessful()) {
                     assert response.body() != null;
                     onLoginComplete.onComplete(response.body().getResponse());
-                } else {
+                } else if (response.code()==422){
+                    onLoginComplete.onPasswordMismatch();
                     Log.e(TAG, "onResponse: AuthController" + response.code());
 
+                }
+                else if (response.code()==423){
+                    onLoginComplete.onStudentDoesNotExist();
+                    Log.e(TAG, "onResponse: AuthController" + response.code());
                 }
             }
 
@@ -121,7 +126,9 @@ public class AuthController {
 
     interface OnLoginComplete {
         void onComplete(String token);
-
+        void onPasswordMismatch();
+        void onStudentDoesNotExist();
+        void onLoading();
         void onFailure();
     }
 

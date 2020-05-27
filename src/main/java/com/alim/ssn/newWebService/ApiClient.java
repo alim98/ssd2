@@ -13,7 +13,7 @@ public class ApiClient {
     private static Retrofit retrofit=null;
 
 //    public static final String BASE_URL="http://ssd04.freesite.vip/public/api/";//real test server
-    public static final String BASE_URL="http://jozva.ir/public/api/";//local server
+    public static final String BASE_URL="http://jozva.ir/ssdserver/public/api/";//local server
     public static Retrofit getRetrofit(){
         if (retrofit==null){
             Gson gson=new GsonBuilder()
