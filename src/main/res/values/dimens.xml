@@ -9,6 +9,7 @@
     <dimen name="standard_margin">16dp</dimen>
     <dimen name="x2_standard_margin">18dp</dimen>
     <dimen name="half_standard_margin">8dp</dimen>
+    <dimen name="x2_half_standard_margin">8dp</dimen>
 
     <dimen name="x2_small_font_size">10sp</dimen>
     <dimen name="small_font_size">12sp</dimen>

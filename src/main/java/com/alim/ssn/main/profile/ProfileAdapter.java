@@ -189,7 +189,7 @@ public class ProfileAdapter  extends RecyclerView.Adapter<ProfileAdapter.Profile
         }
 
 //*****************STUDENT************
-        holder.stName.setText(mStudent.getName()+" "+mStudent.getLast_name());
+        holder.stName.setText(mStudent.getName());
         if (mStudent.getPhotoUrl() != null) {
             imageLoader.displayImage(mStudent.getPhotoUrl(),holder.profile);
         }

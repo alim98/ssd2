@@ -174,7 +174,7 @@ public class StProfAdapter extends RecyclerView.Adapter<StProfAdapter.ProfileVie
         }
 
 //*****************STUDENT************
-        holder.stName.setText(mStudent.getName()+" "+mStudent.getLast_name());
+        holder.stName.setText(mStudent.getName());
         if (mStudent.getPhotoUrl() != null) {
             imageLoader.displayImage(mStudent.getPhotoUrl(),holder.profile);
         }

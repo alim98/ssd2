@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_change_pass"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:layoutDirection="rtl">
+
+        <ImageView
+            android:id="@+id/iv_security_setting_back_button"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/ic_arrow_forward_black_24dp"
+            android:padding="4dp"/>
+    </androidx.appcompat.widget.Toolbar>
+    <com.alim.ssn.utils.YekanTextView
+        android:id="@+id/tv_change_pass"
+        android:layout_below="@id/toolbar_change_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="تغییر رمز عبور"
+        android:layout_margin="@dimen/x2_standard_margin"
+        android:textSize="@dimen/x6_standard_font_size"
+        android:textColor="@color/textDefaultColor"
+        />
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:id="@+id/card_view"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/standard_margin"
+    android:layout_below="@id/tv_change_pass"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+       >
+    <EditText
+        android:id="@+id/et_security_setting_old_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:hint="رمز قبلی"
+        android:inputType="textPassword"
+        android:gravity="right"
+        android:padding="@dimen/standard_margin"
+        />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ddd"/>
+    <EditText
+        android:id="@+id/et_security_setting_new_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:hint="رمز جدید"
+        android:gravity="right"
+        android:inputType="textPassword"
+        android:padding="@dimen/standard_margin"
+        />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ddd"/>
+    <EditText
+        android:id="@+id/et_security_setting_confirm_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:hint="تکرار رمز جدید"
+        android:gravity="right"
+        android:inputType="textPassword"
+        android:padding="@dimen/standard_margin"
+        />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ddd"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/tv_security_setting_old_pass_empty_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="رمز قبلی خود را وارد کنید"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_below="@id/card_view"
+        android:layout_marginRight="@dimen/standard_margin"
+        android:textSize="@dimen/x2_standard_font_size"
+        android:visibility="gone"
+        />
+    <TextView
+        android:id="@+id/tv_security_setting_confirm_do_not_match_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="رمز جدید با تکرار آن مطابقت ندارد"
+        android:visibility="gone"
+
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_below="@id/card_view"
+        android:layout_marginRight="@dimen/standard_margin"
+        android:textSize="@dimen/x2_standard_font_size"
+        />
+    <TextView
+        android:id="@+id/tv_security_setting_incorrect_old_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="رمز شما اشتباه استد"
+        android:visibility="gone"
+
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_below="@id/card_view"
+        android:layout_marginRight="@dimen/standard_margin"
+        android:textSize="@dimen/x2_standard_font_size"
+        />
+
+    <TextView
+        android:id="@+id/tv_security_setting_short_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="رمز جدید باید حذاقل از 8 کاراکتر تشکیل شده باشد"
+        android:visibility="gone"
+
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_below="@id/card_view"
+        android:layout_marginRight="@dimen/standard_margin"
+        android:textSize="@dimen/x2_standard_font_size"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_security_setting_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="normal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/standard_margin"
+        android:backgroundTint="@color/colorPrimary"
+
+        android:src="@drawable/ic_fab_done_white_24dp"/>
+</RelativeLayout>

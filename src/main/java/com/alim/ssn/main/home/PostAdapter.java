@@ -195,7 +195,7 @@ studentController=new StudentController();
         studentController.getStudentPub(post.getStudentId(), new StudentController.OnGetStudentPubComplete() {
             @Override
             public void onSuccess(Student student) {
-                holder.stName.setText(student.getName()+" "+student.getLast_name());
+                holder.stName.setText(student.getName());
                 if (student.getPhotoUrl() != null) {
                     imageLoader.displayImage(student.getPhotoUrl(), holder.stImage);
                 }

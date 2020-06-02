@@ -3,11 +3,10 @@ package com.alim.ssn.model;
 import com.google.gson.annotations.SerializedName;
 
 public class Student {
-    @SerializedName("first_name")
+    @SerializedName("name")
     private String name;
-    private String last_name;
-    private String full_name;
-    private String user_name;
+
+    private String username;
     @SerializedName("phone_number")
     private int phone_number;
     private String email;
@@ -16,7 +15,8 @@ public class Student {
     private String photoUrl;
     @SerializedName("uni_code")
     private int university;
-
+    private int birthday;
+    private int gender;
     @SerializedName("followers_count")
     private int followersCount;
     @SerializedName("followings_count")
@@ -25,9 +25,9 @@ public class Student {
     private int postsCount;
 
 
-
     private String field;
     private String profile_picture;
+
     public int getFollowersCount() {
         return followersCount;
     }
@@ -87,20 +87,13 @@ public class Student {
         this.name = name;
     }
 
-    public String getLast_name() {
-        return last_name;
+
+    public String getUsername() {
+        return username;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
-    }
-
-    public String getUser_name() {
-        return user_name;
-    }
-
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public int getPhone_number() {
@@ -137,11 +130,19 @@ public class Student {
     }
 
 
-    public String getFull_name() {
-        return full_name;
+    public int getBirthday() {
+        return birthday;
     }
 
-    public void setFull_name(String full_name) {
-        this.full_name = full_name;
+    public void setBirthday(int birthday) {
+        this.birthday = birthday;
+    }
+
+    public int getGender() {
+        return gender;
+    }
+
+    public void setGender(int gender) {
+        this.gender = gender;
     }
 }

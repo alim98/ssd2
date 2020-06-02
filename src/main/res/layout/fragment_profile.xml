@@ -1,228 +1,259 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+android:id="@+id/srl_profile"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:id="@+id/dl_profile">
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_height="match_parent">
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/dl_profile"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true">
+            >
 
-            <com.google.android.material.appbar.CollapsingToolbarLayout
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/app_bar33"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:fitsSystemWindows="true"
-                app:contentScrim="@android:color/transparent"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:statusBarScrim="@android:color/transparent">
+                >
 
-                <LinearLayout
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/toolbar_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <FrameLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-
-                        <ImageView
-                            android:id="@+id/iv_prf_header"
-                            android:layout_width="match_parent"
-                            android:layout_height="200dp"
-                            android:adjustViewBounds="true"
-                            android:src="@drawable/header"
-
-                            tools:scaleType="centerCrop" />
-
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/iv_prf_img"
-                            android:layout_width="96dp"
-                            android:layout_height="96dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="152dp"
-                            app:civ_border_color="@android:color/white"
-                            app:civ_border_width="3dp"
-                            tools:src="@drawable/ali"
-
-                            />
-
-                        <ImageView
-                            android:id="@+id/iv_menu_profile"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@drawable/about_us_menu"
-                            android:layout_gravity="right"
-                            android:layout_margin="@dimen/standard_margin"
-                            />
-                    </FrameLayout>
-
-                    <com.alim.ssn.utils.YekanTextView
-                        android:id="@+id/tv_prof_st_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="@dimen/standard_margin"
-
-                        android:gravity="center"
-                        android:textColor="@android:color/black"
-                        android:textSize="@dimen/x8_standard_font_size"
-                        tools:text="علی میکائیلی" />
-
-                    <com.alim.ssn.utils.YekanTextView
-                        android:id="@+id/tv_prf_uni"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="@dimen/half_standard_margin"
-                        android:textColor="@color/textDefaultColor"
-                        android:textSize="@dimen/x4_standard_font_size"
-                        tools:text="دانشگاه علامه طباطبایی اردبیل" />
-
-                    <com.alim.ssn.utils.YekanTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="@dimen/half_standard_margin"
-                        android:layout_marginBottom="@dimen/x2_standard_font_size"
-                        android:textColor="#304ffe"
-                        android:textSize="@dimen/x4_standard_font_size"
-                        tools:text="علوم تربیتی" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.4dp"
-                        android:background="#ddd" />
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    app:contentScrim="?attr/colorPrimary"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center">
+                        android:orientation="vertical"
+                        app:layout_collapseMode="parallax"
+                        app:layout_collapseParallaxMultiplier="0.7">
+                        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            >
 
+                            <ImageView
+                                android:id="@+id/profile_header"
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:background="@drawable/header3"/>
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/iv_prf_img"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                app:layout_anchor="@id/profile_header"
+                                app:layout_anchorGravity="center"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="100dp"
+                                android:src="@drawable/default_avatar"
+                                app:civ_border_color="@android:color/white"
+                                app:civ_border_width="3dp"
+
+                                />
+
+                        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                        <com.alim.ssn.utils.YekanTextView
+                            android:id="@+id/tv_prof_st_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:text="علی میکائیلی"
+                            android:textSize="@dimen/x4_standard_font_size"
+                            android:gravity="center"
+                            android:layout_margin="@dimen/x2_half_standard_margin"
+                            android:textColor="@android:color/black"/>
+                        <com.alim.ssn.utils.YekanTextView
+                            android:id="@+id/tv_prf_uni"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:text="دانشگاه پیام نور اردبیل"
+                            android:layout_margin="@dimen/x2_half_standard_margin"
+                            android:textColor="@color/textDefaultColor"
+                            android:textSize="@dimen/x4_standard_font_size"
+                            android:gravity="center"/>
+                        <com.alim.ssn.utils.YekanTextView
+                            android:id="@+id/tv_prf_field"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/x2_half_standard_margin"
+                            android:layout_marginBottom="@dimen/x2_half_standard_margin"
+                            android:textColor="#304ffe"
+                            android:textSize="@dimen/x4_standard_font_size"
+                            tools:text="مهندسی کاپیوتر" />
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/x2_standard_margin"
-                            android:layout_marginTop="@dimen/half_standard_margin"
-                            android:layout_marginRight="@dimen/x2_standard_margin"
-                            android:layout_marginBottom="@dimen/half_standard_margin"
-                            android:orientation="vertical">
+                            android:layout_gravity="center">
 
-                            <TextView
-                                android:id="@+id/tv_posts_count_profile"
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_margin="@dimen/half_standard_margin"
-                                android:gravity="center"
-                                android:textSize="@dimen/x4_standard_font_size"
-                                android:textStyle="bold"
-                                tools:text="230" />
+                                android:layout_marginLeft="@dimen/x2_standard_margin"
+                                android:layout_marginTop="@dimen/half_standard_margin"
+                                android:layout_marginRight="@dimen/x2_standard_margin"
+                                android:layout_marginBottom="@dimen/half_standard_margin"
+                                android:orientation="vertical">
 
-                            <TextView
+                                <TextView
+                                    android:id="@+id/tv_posts_count_profile"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/half_standard_margin"
+                                    android:gravity="center"
+                                    android:textSize="@dimen/x4_standard_font_size"
+                                    android:textStyle="bold"
+                                    tools:text="0" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="@string/posts"
+                                    android:textSize="@dimen/x4_standard_font_size" />
+                            </LinearLayout>
+
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:text="@string/posts"
-                                android:textSize="@dimen/x4_standard_font_size" />
+                                android:layout_marginLeft="@dimen/x2_standard_margin"
+                                android:layout_marginTop="@dimen/half_standard_margin"
+                                android:layout_marginRight="@dimen/x2_standard_margin"
+                                android:layout_marginBottom="@dimen/half_standard_margin"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_followings_count_profile"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/half_standard_margin"
+                                    android:gravity="center"
+                                    android:textSize="@dimen/x4_standard_font_size"
+                                    android:textStyle="bold"
+                                    tools:text="0" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="@string/following"
+                                    android:textSize="@dimen/x4_standard_font_size" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/x2_standard_margin"
+                                android:layout_marginTop="@dimen/half_standard_margin"
+                                android:layout_marginRight="@dimen/x2_standard_margin"
+                                android:layout_marginBottom="@dimen/half_standard_margin"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_followers_count_profile"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/half_standard_margin"
+                                    android:gravity="center"
+                                    android:textSize="@dimen/x4_standard_font_size"
+                                    android:textStyle="bold"
+                                    tools:text="0" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="@string/followers"
+                                    android:textSize="@dimen/x4_standard_font_size" />
+                            </LinearLayout>
+
+
                         </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/x2_standard_margin"
-                            android:layout_marginTop="@dimen/half_standard_margin"
-                            android:layout_marginRight="@dimen/x2_standard_margin"
-                            android:layout_marginBottom="@dimen/half_standard_margin"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tv_followings_count_profile"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_margin="@dimen/half_standard_margin"
-                                android:gravity="center"
-                                android:textSize="@dimen/x4_standard_font_size"
-                                android:textStyle="bold"
-                                tools:text="112 K" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:text="@string/following"
-                                android:textSize="@dimen/x4_standard_font_size" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/x2_standard_margin"
-                            android:layout_marginTop="@dimen/half_standard_margin"
-                            android:layout_marginRight="@dimen/x2_standard_margin"
-                            android:layout_marginBottom="@dimen/half_standard_margin"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tv_followers_count_profile"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_margin="@dimen/half_standard_margin"
-                                android:gravity="center"
-                                android:textSize="@dimen/x4_standard_font_size"
-                                android:textStyle="bold"
-                                tools:text="112 K" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:text="@string/followers"
-                                android:textSize="@dimen/x4_standard_font_size" />
-                        </LinearLayout>
-
 
                     </LinearLayout>
-                </LinearLayout>
 
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/profile_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_collapseMode="pin"
+                        >
+                        <RelativeLayout
+                            android:id="@+id/rl_profile_toolbar"
+                            android:layout_width="match_parent"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/tv_profile_collapsed_st_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="علی میکائیلی"
+                                android:layout_alignParentRight="true"
+                                android:textSize="@dimen/x4_standard_font_size"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="@dimen/standard_margin"
+                                />
+                        </RelativeLayout>
+                    </androidx.appcompat.widget.Toolbar>
+                    <ImageView
+                        android:id="@+id/iv_menu_profile"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="top|right"
 
-            <View
+                        android:layout_marginTop="?attr/actionBarSize"
+                        android:layout_marginRight="@dimen/standard_margin"
+                        android:src="@drawable/about_us_menu" />
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_prf_posts"
                 android:layout_width="match_parent"
-                android:layout_height="0.4dp"
-                android:background="#ddd" />
-        </com.google.android.material.appbar.AppBarLayout>
+                android:layout_height="match_parent"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+                />
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_prf_posts"
-            android:layout_width="match_parent"
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_profile_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:layout_anchor="@id/app_bar33"
+                app:layout_anchorGravity="bottom|end"
+                android:backgroundTint="@color/colorPrimary"
+                android:src="@drawable/ic_edit_white_24dp" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nv_profile"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+            android:layout_gravity="end"
+            android:layoutDirection="rtl"
+            app:menu="@menu/profile_drawer" />
 
+    </androidx.drawerlayout.widget.DrawerLayout>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nv_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="end"
-        android:layoutDirection="rtl"
-        app:menu="@menu/profile_drawer" />
-</androidx.drawerlayout.widget.DrawerLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -7,7 +7,13 @@
     android:versionCode="1"
     android:versionName="1.0"
     tools:ignore="GradleOverrides">
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -18,30 +24,30 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="true" />
-
     <application
         android:name=".studentProperties.Stid"
         android:allowBackup="true"
-        android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        tools:ignore="GoogleAppIndexingWarning"
         android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true"
-        >
-        <activity android:name=".main.profile.SavedPostActivity"/>
-        <activity android:name=".PdfCreator"/>
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".main.profile.SecuritySetting" />
+        <activity android:name=".main.profile.EditprofileActivity" />
+        <activity android:name=".main.profile.SavedPostActivity" />
+        <activity android:name=".PdfCreator" />
         <activity android:name=".views.AboutUs" />
         <activity android:name=".main.Comment.CommentsFragment"/>
-        <activity android:name=".auth.RegisterActivity"
-            android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <activity
+            android:name=".auth.RegisterActivity"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustResize" />
         <activity
             android:name=".auth.LoginActivity"
-            android:windowSoftInputMode="adjustPan|adjustResize"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,6 +57,13 @@
         <activity android:name=".stProf.StProfActivity" />
         <activity android:name=".main.profile.following.Followings" />
         <activity android:name=".main.profile.followers.Followers" />
+        <activity android:name=".TakePhoto" />
+        <activity android:name=".rxjavatest.TestRx" />
+        <activity android:name=".auth.Welcome" />
+        <activity android:name=".main.create.CreatePost" />
+        <activity
+            android:name=".main.MainActivity"
+            android:label="@string/app_name" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -61,14 +74,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
-        <activity android:name=".TakePhoto" />
-        <activity android:name=".rxjavatest.TestRx" />
-        <activity android:name=".auth.Welcome" />
-        <activity android:name=".main.create.CreatePost" />
-        <activity
-            android:name=".main.MainActivity"
-            android:label="@string/app_name" />
     </application>
 
 </manifest>

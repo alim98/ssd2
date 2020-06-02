@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.appcompat.widget.Toolbar
+android:layout_width="match_parent"
+android:layout_height="?attr/actionBarSize"
+android:background="@color/colorPrimary"
+    android:elevation="4dp"
+android:layoutDirection="rtl">
+
+<ImageView
+    android:id="@+id/iv_edit_prf_back_button"
+    android:layout_width="42dp"
+    android:layout_height="42dp"
+    android:src="@drawable/ic_arrow_forward_black_24dp"
+    android:padding="4dp"/>
+</androidx.appcompat.widget.Toolbar>
+
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<de.hdodenhof.circleimageview.CircleImageView
+    android:id="@+id/iv_edit_prf_avatar_pic"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:src="@drawable/default_avatar"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/standard_margin"/>
+    <com.alim.ssn.utils.YekanTextView
+        android:id="@+id/tv_edit_prf_change_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="تغییر عکس نمایه"
+        android:textSize="@dimen/x4_standard_font_size"
+        android:layout_gravity="center"
+        android:textColor="@android:color/holo_blue_dark"
+        />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.alim.ssn.utils.YekanTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="اطلاعات حساب"
+        android:layout_margin="@dimen/x2_standard_margin"
+        android:textSize="@dimen/x6_standard_font_size"
+        android:textColor="@color/textDefaultColor"
+/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/x2_standard_margin"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <EditText
+                android:id="@+id/et_edit_prf_username"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="نام کاربری"
+                android:padding="@dimen/standard_margin"
+                android:background="@null"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd"/>
+            <EditText
+                android:id="@+id/et_edit_prf_email"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:padding="@dimen/standard_margin"
+                android:background="@null"
+                android:hint="ایمیل"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.alim.ssn.utils.YekanTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="اطلاعات پروفایل"
+        android:layout_margin="@dimen/x2_standard_margin"
+        android:textSize="@dimen/x6_standard_font_size"
+        android:textColor="@color/textDefaultColor"
+        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/x2_standard_margin"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <EditText
+                android:id="@+id/et_edit_prf_name"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="نام کامل"
+                android:padding="@dimen/standard_margin"
+                android:background="@null"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd"/>
+            <EditText
+                android:id="@+id/et_edit_prf_field"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="رشته"
+                android:padding="@dimen/standard_margin"
+                android:background="@null"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd"/>
+            <RelativeLayout
+                android:id="@+id/rl_edit_prf_uni"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+          >
+                <TextView
+                    android:id="@+id/tv_edit_prf_uni"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="دانشگاه"
+                    android:textColor="?android:textColorHint"
+                    android:textSize="@dimen/x4_standard_font_size"
+                    android:padding="@dimen/standard_margin"
+                    android:layout_alignParentRight="true"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/ic_arrow_drop_down_black_24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/standard_margin"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd"/>
+            <RelativeLayout
+                android:id="@+id/rl_edit_prf_gender"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+               >
+                <TextView
+                    android:id="@+id/tv_edit_prf_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="جنسیت"
+                    android:textColor="?android:textColorHint"
+                    android:textSize="@dimen/x4_standard_font_size"
+                    android:padding="@dimen/standard_margin"
+                    android:layout_alignParentRight="true"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/ic_arrow_drop_down_black_24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/standard_margin"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd"/>
+            <RelativeLayout
+                android:id="@+id/rl_edit_prf_age"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+           >
+                <TextView
+                    android:id="@+id/tv_edit_prf_birthday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="سن"
+                    android:textColor="?android:textColorHint"
+                    android:textSize="@dimen/x4_standard_font_size"
+                    android:padding="@dimen/standard_margin"
+                    android:layout_alignParentRight="true"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/ic_arrow_drop_down_black_24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/standard_margin"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
+
+</LinearLayout>
+</ScrollView>
+
+</LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fav_edit_prf_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="normal"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="@dimen/standard_margin"
+        android:src="@drawable/ic_fab_done_white_24dp"
+        />
+</RelativeLayout>

@@ -66,7 +66,7 @@ holder.timeLeft.setText(result);
             public void onResponse(Call<Student> call, Response<Student> response) {
                 if (response.isSuccessful())
                 {
-                    holder.stName.setText(response.body().getName()+" "+response.body().getLast_name());
+                    holder.stName.setText(response.body().getName());
                     imageLoader.displayImage(response.body().getPhotoUrl(), holder.stPic);
                 }else {
                     Toast.makeText(context, "Errorr", Toast.LENGTH_SHORT).show();

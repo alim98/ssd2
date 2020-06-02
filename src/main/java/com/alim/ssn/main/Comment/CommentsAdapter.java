@@ -51,7 +51,7 @@ public class CommentsAdapter  extends RecyclerView.Adapter<CommentsAdapter.Comme
             public void onResponse(Call<Student> call, Response<Student> response) {
                 if (response.isSuccessful()) {
                     Picasso.get().load(response.body().getPhotoUrl()).into(holder.profile);
-                    holder.stName.setText(response.body().getName()+" "+response.body().getLast_name());
+                    holder.stName.setText(response.body().getName());
                 }
             }
 

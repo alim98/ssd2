@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 
 import com.alim.ssn.R;
 import com.alim.ssn.model.Student;
@@ -139,7 +140,7 @@ public class JozvaCreatePostDialog extends Dialog {
         });
     }
 
-    public void getStPubInfo(){
+    private void getStPubInfo(){
         CircleImageView imageView=findViewById(R.id.iv_create_post_st_prf);
         TextView name=findViewById(R.id.tv_create_post_st_name);
         TextView uni=findViewById(R.id.tv_create_post_st_uni);
@@ -149,14 +150,22 @@ public class JozvaCreatePostDialog extends Dialog {
             @Override
             public void onResponse(Call<Student> call, Response<Student> response) {
                 if (response.isSuccessful()) {
-                    Picasso.get().load(response.body().getPhotoUrl()).into(imageView);
-                    name.setText(response.body().getFull_name());
+                    if (response.body().getPhotoUrl()!=null)
+                    {
+                        Picasso.get().load(response.body().getPhotoUrl()).into(imageView);
+                    }else {
+                        imageView.setImageDrawable(ContextCompat.getDrawable(getContext(),R.drawable.default_avatar));
+                    }
+
+                    name.setText(response.body().getName());
                     Call<University> universityCall=apiInterface.getUniversity(response.body().getUniversity());
                     universityCall.enqueue(new Callback<University>() {
                         @Override
                         public void onResponse(Call<University> call, Response<University> response) {
                             if (response.isSuccessful()&&response.body().getName()!=null) {
                                 uni.setText(response.body().getName());
+                            } else if (response.body().getName() == null) {
+                                uni.setText("دانشگاه انتخاب نشده است");
                             }
                         }
 

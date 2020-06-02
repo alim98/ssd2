@@ -4,6 +4,9 @@
         android:id="@+id/navigation_saved_posts"
         android:title="@string/saved_posts" />
     <item
+        android:id="@+id/navigation_security_setting"
+        android:title="@string/security_setting" />
+    <item
         android:id="@+id/navigation_logout"
         android:title="@string/logout" />
 </menu>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="birthday">
+        <item>1360</item>
+        <item>1361</item>
+        <item>1362</item>
+        <item>1363</item>
+        <item>1364</item>
+        <item>1365</item>
+        <item>1366</item>
+        <item>1367</item>
+        <item>1368</item>
+        <item>1369</item>
+        <item>1370</item>
+        <item>1371</item>
+        <item>1372</item>
+        <item>1373</item>
+        <item>1374</item>
+        <item>1375</item>
+        <item>1376</item>
+        <item>1377</item>
+        <item>1378</item>
+        <item>1379</item>
+        <item>1380</item>
+        <item>1381</item>
+        <item>1382</item>
+        <item>1383</item>
+        <item>1384</item>
+        <item>1385</item>
+        <item>1386</item>
+        <item>1387</item>
+        <item>1388</item>
+        <item>1389</item>
+        <item>1390</item>
+        <item>1391</item>
+        <item>1392</item>
+        <item>1393</item>
+        <item>1394</item>
+        <item>1395</item>
+        <item>1396</item>
+        <item>1397</item>
+        <item>1398</item>
+        <item>1399</item>
+
+    </string-array>
+</resources>

@@ -226,7 +226,7 @@ public class StProfActivity extends AppCompatActivity {
     }
 
     private void setupViews() {
-        flName.setText(student.getName() +" "+ student.getLast_name());
+        flName.setText(student.getName() );
 
         if (student.getPhotoUrl() != null) {
 

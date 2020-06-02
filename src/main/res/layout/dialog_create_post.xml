@@ -9,39 +9,50 @@
     <RelativeLayout
         android:id="@+id/rl1"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/standard_margin">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_toRightOf="@id/btn_create_post_post"
+    android:layout_marginLeft="@dimen/standard_margin">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/iv_create_post_st_prf"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="@dimen/standard_margin"
-            android:src="@drawable/test_avatar" />
 
-        <com.alim.ssn.utils.YekanTextView
-            android:id="@+id/tv_create_post_st_name"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/iv_create_post_st_prf"
-            android:layout_marginTop="@dimen/half_standard_margin"
-            android:layout_toLeftOf="@id/iv_create_post_st_prf"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/x2_standard_font_size"
-            tools:text="علی میکائیلی" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_create_post_st_prf"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:src="@drawable/default_avatar" />
 
-        <com.alim.ssn.utils.YekanTextView
-            android:id="@+id/tv_create_post_st_uni"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_create_post_st_name"
-            android:layout_marginTop="@dimen/half_standard_margin"
-            android:layout_toLeftOf="@id/iv_create_post_st_prf"
-            android:textColor="@color/colorAccent"
-            tools:text="دانشگاه علامه طباطبایی"
+    <com.alim.ssn.utils.YekanTextView
+        android:id="@+id/tv_create_post_st_name"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_create_post_st_prf"
+        android:layout_marginTop="@dimen/half_standard_margin"
+        android:layout_toLeftOf="@id/iv_create_post_st_prf"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/x2_standard_font_size"
+        tools:text="علی میکائیلی" />
 
-            />
+    <com.alim.ssn.utils.YekanTextView
+        android:id="@+id/tv_create_post_st_uni"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/standard_font_size"
+        android:layout_below="@id/tv_create_post_st_name"
+        android:layout_marginTop="@dimen/half_standard_margin"
+        android:layout_toLeftOf="@id/iv_create_post_st_prf"
+        android:textColor="@color/colorAccent"
+        tools:text="دانشگاه علامه طباطبایی"
+
+        />
+
+</RelativeLayout>
 
         <Button
             android:id="@+id/btn_create_post_post"
@@ -57,11 +68,10 @@
     <EditText
         android:id="@+id/et_create_post_desc"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/tags_input"
-        android:layout_below="@id/rl1"
-        android:layout_marginBottom="568dp"
-        android:background="@color/white_transparency"
+        android:layout_height="match_parent"
+android:layout_below="@id/rl1"
+        android:background="@android:color/white"
+        android:layout_above="@id/tags_input"
         android:gravity="right|top"
         android:hint="چیزی بنویسید..."
         android:padding="@dimen/standard_margin" />

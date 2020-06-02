@@ -1,19 +1,23 @@
 package com.alim.ssn.main.profile;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -24,15 +28,12 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.alim.ssn.R;
 import com.alim.ssn.auth.AuthController;
 import com.alim.ssn.auth.LoginActivity;
-import com.alim.ssn.main.home.GetNoticeIntractorImpl;
-import com.alim.ssn.main.home.HomeFragment;
-import com.alim.ssn.main.home.PresenterImpl;
 import com.alim.ssn.model.Post;
 import com.alim.ssn.model.Student;
 import com.alim.ssn.model.University;
-import com.alim.ssn.newWebService.ApiClient;
-import com.alim.ssn.newWebService.ApiInterface;
 import com.alim.ssn.studentProperties.Stid;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
 
@@ -47,12 +48,13 @@ import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import butterknife.OnClick;
+
+import static android.app.Activity.RESULT_OK;
 
 public class UserProfileFragment extends Fragment  {
-   @BindView(R.id.tv_followers_count_profile)
+    private static final int EDIT_PRF_REQUEST_CODE = 1005;
+    @BindView(R.id.tv_followers_count_profile)
     TextView followers;
     @BindView(R.id.tv_followings_count_profile)
     TextView followings;
@@ -64,8 +66,12 @@ public class UserProfileFragment extends Fragment  {
     DrawerLayout drawerLayout;
     @BindView(R.id.nv_profile)
     NavigationView navigationView;
-    @BindView(R.id.iv_menu_profile)
-    ImageView menu;
+    @BindView(R.id.fab_profile_edit)
+    FloatingActionButton prfEdit;
+    @BindView(R.id.tv_profile_collapsed_st_name)
+    TextView collapsedStName;
+    @BindView(R.id.srl_profile)
+    SwipeRefreshLayout refreshLayout;
     private ProfileController profileController;
     private Student mStudent;
     private int stId;
@@ -85,7 +91,11 @@ public class UserProfileFragment extends Fragment  {
         ButterKnife.bind(this, view);
          stId=((Stid) Objects.requireNonNull(getContext()).getApplicationContext()).getStId();
         mToken = "Bearer " +((Stid) Objects.requireNonNull(getActivity()).getApplication()).getToken();
-
+        ImageView menu=view.findViewById(R.id.iv_menu_profile);
+        menu.setOnClickListener(view1 -> drawerLayout.openDrawer(GravityCompat.END)
+);
+        setstatusBarColor();
+        setupToolbar();
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -93,6 +103,9 @@ public class UserProfileFragment extends Fragment  {
                 {
                     case R.id.navigation_logout:
                         logout();
+                        break;
+                    case R.id.navigation_security_setting:
+                        startActivity(new Intent(getActivity(), SecuritySetting.class));
                         break;
                     case R.id.navigation_saved_posts:
                         openSavedPostActivity();
@@ -103,17 +116,69 @@ public class UserProfileFragment extends Fragment  {
         });
         profileController=new ProfileController();
          getStudent();
-        setupDrawer();
+        prfEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getContext(), EditprofileActivity.class);
+                startActivityForResult(intent,EDIT_PRF_REQUEST_CODE);
+            }
+        });
+        RelativeLayout relativeLayout=view.findViewById(R.id.rl_profile_toolbar);
+
+        AppBarLayout appBarLayout=view.findViewById(R.id.app_bar33);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.BaseOnOffsetChangedListener() {
+            boolean isShow=false;
+            int scrollRange=-1;
+
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.getTotalScrollRange();
+                }
+                if (scrollRange + verticalOffset ==0) {
+                    isShow = true;
+                    relativeLayout.setVisibility(View.VISIBLE);
+                    refreshLayout.setEnabled(false);
+                    refreshLayout.setRefreshing(false);
+
+                } else if (isShow) {
+                    isShow = false;
+                    relativeLayout.setVisibility(View.GONE);
+
+
+                }
+                if (verticalOffset == 0) {
+                    refreshLayout.setEnabled(true);
+                }
+//todo fitsisystemwindow bad work in start
+            }
+        });
+
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getStudent();
+            }
+        });
+
         return  view;
     }
 
-    private void setupDrawer() {
-        menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawerLayout.openDrawer(GravityCompat.END);
-            }
-        });
+    private void setupToolbar() {
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==EDIT_PRF_REQUEST_CODE&&resultCode==RESULT_OK){
+            getStudent();
+        }
+    }
+    @OnClick(R.id.iv_menu_profile)
+     void setupDrawer() {
+drawerLayout.openDrawer(GravityCompat.END);
     }
 
     private void getStudent() {
@@ -123,6 +188,8 @@ public class UserProfileFragment extends Fragment  {
                 mStudent=student;
                 setupRecyclerView();
                 setupProfile();
+                refreshLayout.setRefreshing(false);
+
             }
 
             @Override
@@ -134,18 +201,25 @@ public class UserProfileFragment extends Fragment  {
 
     private void setupProfile() {
         TextView name=view.findViewById(R.id.tv_prof_st_name);
+        collapsedStName.setText(mStudent.getName());
         ImageView profile=view.findViewById(R.id.iv_prf_img);
         TextView uni=view.findViewById(R.id.tv_prf_uni);
-        if (mStudent.getLast_name() != null) {
-            name.setText(mStudent.getName()+" "+mStudent.getLast_name());
-        }else {
+        TextView field=view.findViewById(R.id.tv_prf_field);
+
             name.setText(mStudent.getName());
+        if (mStudent.getPhotoUrl() != null) {
+
+            Picasso.get().load(mStudent.getPhotoUrl()).into(profile);
         }
-        Picasso.get().load(mStudent.getPhotoUrl()).into(profile);
         profileController.getUni(mStudent.getUniversity(), new ProfileController.OnGetUniComplete() {
             @Override
             public void onSuccess(University university) {
-                uni.setText(university.getName());
+                if (university.getName()!=null){
+                    uni.setVisibility(View.VISIBLE);
+                    uni.setText(university.getName());
+                }else {
+                    uni.setVisibility(View.GONE);
+                }
             }
 
             @Override
@@ -157,6 +231,21 @@ public class UserProfileFragment extends Fragment  {
         followers.setText(String.valueOf(mStudent.getFollowersCount()));
         followings.setText(String.valueOf(mStudent.getFollowingsCount()));
         postsCount.setText(String.valueOf(mStudent.getPostsCount()));
+        if (!mStudent.getField().isEmpty()){
+            field.setVisibility(View.VISIBLE);
+            field.setText(mStudent.getField());
+        }else {
+            field.setVisibility(View.GONE);
+        }
+
+    }
+    private void setstatusBarColor() {
+        if (Build.VERSION.SDK_INT >= 21) {
+            Window window = getActivity().getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        }
     }
 
     private void setupRecyclerView() {

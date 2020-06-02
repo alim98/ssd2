@@ -1,5 +1,7 @@
 package com.alim.ssn.newWebService;
 
+import androidx.annotation.StringRes;
+
 import com.alim.ssn.like.LikeModel;
 import com.alim.ssn.main.Comment.Comment;
 import com.alim.ssn.main.Posts;
@@ -45,7 +47,8 @@ public interface ApiInterface {
 
     @POST("register")
     @FormUrlEncoded
-    Call<StringResponseModel> register(@Field("phone_number") int stId, @Field("first_name") String name, @Field("username") String username, @Field("password") String password);
+    Call<StringResponseModel> register(@Field("phone_number") int stId, @Field("name") String name, @Field("username") String username, @Field("password") String password);
+
     // *************STUDENT**************
     @GET("student/{id}")
     Call<Student> getStudent(@Path("id") int stId);
@@ -62,6 +65,14 @@ public interface ApiInterface {
 
     @GET("student/stpub/{id}")
     Call<Student> getStPub(@Path("id") int stId);
+
+    @PUT("student/changepassword/{id}")
+    @FormUrlEncoded
+    Call<StringResponseModel> changePassword(@Header("Authorization") String userKey, @Path("id") int stid, @Field("password") String password, @Field("new_password") String newPassword);
+
+    //@PUT
+    //@FormUrlEncoded
+    //Call<StringResponseModel> updateSt(@Header("Authentication") String token, @Field("id") int stId,@Field("username") String userName,@Field("email") String email,@Field("name") String name, @Field("uni_code"))
     //*************POST
     @POST("post")
     @FormUrlEncoded

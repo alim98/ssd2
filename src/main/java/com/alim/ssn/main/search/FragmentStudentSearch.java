@@ -44,7 +44,7 @@ public class FragmentStudentSearch extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Student selectedStudent = exStudents.get(position);
                 Intent intent = new Intent(getContext(), StProfActivity.class);
-                intent.putExtra(StProfActivity.FIRST_AND_LAST_NAME, selectedStudent.getName() + " " + selectedStudent.getLast_name());
+                intent.putExtra(StProfActivity.FIRST_AND_LAST_NAME, selectedStudent.getName() );
                 intent.putExtra(StProfActivity.PHONE_NUMBER, selectedStudent.getPhone_number());
                 startActivity(intent);
             }
@@ -74,7 +74,7 @@ public class FragmentStudentSearch extends Fragment {
                 if (students != null) {
 
                     for (int i = 0; i < students.size(); i++) {
-                        names.add(students.get(i).getFull_name());
+                        names.add(students.get(i).getName());
                         exStudents.add(students.get(i));
                     }
                     noStudentFind.setVisibility(View.VISIBLE);
